@@ -1,0 +1,15 @@
+---
+import HeroItem from './HeroItem.astro';
+
+import HeroesMock from '../mocks/heroes.json';
+---
+
+<ul class='grid grid-cols-2 md:grid-cols-3 gap-6 pb-12'>
+  {
+    HeroesMock.map(({ id, superhero, publisher, bg }) => (
+      <li>
+        <HeroItem title={superhero} url={id} bg={bg} publisher={publisher} />
+      </li>
+    ))
+  }
+</ul>

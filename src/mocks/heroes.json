@@ -1,0 +1,62 @@
+[
+  {
+    "id": "dc-batman",
+    "superhero": "Batman",
+    "publisher": "DC Comics",
+    "alter_ego": "Bruce Wayne",
+    "first_appearance": "Detective Comics #27",
+    "characters": "Bruce Wayne",
+    "bg": "#e1e3e7",
+    "lightFont": false
+  },
+  {
+    "id": "dc-superman",
+    "superhero": "Superman",
+    "publisher": "DC Comics",
+    "alter_ego": "Kal-El",
+    "first_appearance": "Action Comics #1",
+    "characters": "Kal-El",
+    "bg": "#365876",
+    "lightFont": true
+  },
+  {
+    "id": "dc-wonder",
+    "superhero": "Wonder Woman",
+    "publisher": "DC Comics",
+    "alter_ego": "Princess Diana",
+    "first_appearance": "All Star Comics #8",
+    "characters": "Princess Diana",
+    "bg": "#dba99a",
+    "lightFont": false
+  },
+  {
+    "id": "marvel-captain",
+    "superhero": "Captain America",
+    "publisher": "Marvel Comics",
+    "alter_ego": "Steve Rogers",
+    "first_appearance": "Captain America Comics #1",
+    "characters": "Steve Rogers",
+    "bg": "#332525",
+    "lightFont": true
+  },
+  {
+    "id": "marvel-iron",
+    "superhero": "Iron Man",
+    "publisher": "Marvel Comics",
+    "alter_ego": "Tony Stark",
+    "first_appearance": "Tales of Suspense #39",
+    "characters": "Tony Stark",
+    "bg": "#325782",
+    "lightFont": true
+  },
+  {
+    "id": "marvel-hulk",
+    "superhero": "Hulk",
+    "publisher": "Marvel Comics",
+    "alter_ego": "Bruce Banner",
+    "first_appearance": "The Incredible Hulk #1",
+    "characters": "Bruce Banner",
+    "bg": "#4d462e",
+    "lightFont": true
+  }
+]

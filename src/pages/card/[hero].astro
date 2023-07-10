@@ -1,0 +1,72 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Heroes from '../../mocks/heroes.json';
+
+const { hero } = Astro.params;
+
+const info = Heroes.find(h => h.id === hero);
+
+if (!info) {
+  return Astro.redirect('/404');
+}
+---
+
+<Layout title={`${info.superhero.toUpperCase()}`}>
+  <svg
+    class='fixed min-h-screen w-screen top-0 left-0 z-[1]'
+    style={`view-transition-name: ${info.id}-bg; background-color: ${info.bg}`}>
+  </svg>
+  <main
+    class='m-auto max-w-4xl pb-4 z-10 relative'
+    style={`color: ${info.lightFont ? '#fff' : '#000'}`}>
+    <header>
+      <h1
+        class='text-3xl md:text-6xl font-black uppercase text-center tracking-widest scale-50'
+        style='view-transition-name: title'>
+        super Comic
+        <span class='block font-black text-6xl md:text-9xl tracking-tighter'>
+          Heroes</span
+        >
+      </h1>
+    </header>
+    <section class='grid grid-cols-1 md:grid-cols-[350px_1fr] gap-6 md:gap-12'>
+      <div class='flex flex-col'>
+        <picture>
+          {
+            /* TODO: ADDING THE view-transition-name PROPERTY TO IDENTIFY THE ELEMENT TO ANIMATE */
+          }
+          <img
+            class='aspect-[9/16] h-full w-full object-cover rounded-lg'
+            src={`/heroes/${info.id}.webp`}
+            alt={`Superhero: ${info.superhero}`}
+            style={`view-transition-name: ${info.id}-picture`}
+          />
+        </picture>
+      </div>
+      <aside class='flex flex-col'>
+        <h3 class='text-3xl md:text-6xl font-black mb-4'>
+          {info.superhero} - {info.alter_ego}
+        </h3>
+        <span class='flex gap-2 items-center mb-8'>
+          <img
+            class='h-10 object-cover'
+            src={`/${
+              info.publisher === 'Marvel Comics' ? 'marvel-logo' : 'dc-logo'
+            }.png`}
+            alt={`Publisher: ${info.publisher}`}
+            style={`view-transition-name: ${info.id}-publisher`}
+          />
+          <p class='text-xl md:text-3xl font-semibold'>- {info.publisher}</p>
+        </span>
+        <p class='text-md md:text-xl'>
+          <span class='font-medium'>First appearance:</span>
+          {info.first_appearance}
+        </p>
+        <p class='text-md md:text-xl'>
+          <span class='font-medium'>All Characters:</span>
+          {info.characters}
+        </p>
+      </aside>
+    </section>
+  </main>
+</Layout>

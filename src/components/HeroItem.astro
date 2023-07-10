@@ -1,0 +1,34 @@
+---
+export interface Props {
+  title: string;
+  publisher: string;
+  url: string;
+  bg: string;
+}
+
+const { title, publisher, url, bg } = Astro.props;
+---
+
+<a
+  class='inline-block hover:scale-105 transition-all hover:contrast-125 hover:shadow-lg active:scale-95 relative'
+  href={`card/${url}`}>
+  {
+    /* TODO: ADDING THE view-transition-name PROPERTY TO IDENTIFY THE ELEMENT TO ANIMATE */
+  }
+  <img
+    class='aspect-[9/16] h-full w-full object-cover rounded-lg'
+    src={`./heroes/${url}.webp`}
+    alt={`Superhero: ${title}`}
+    style={`view-transition-name: ${url}-picture`}
+  />
+  <img
+    class='absolute h-10 bottom-4 left-4 object-cover'
+    src={`./${publisher === 'Marvel Comics' ? 'marvel-logo' : 'dc-logo'}.png`}
+    alt={`Publisher: ${publisher}`}
+    style={`view-transition-name: ${url}-publisher`}
+  />
+  <svg
+    class='absolute top-[50%] left-[50%] w-1 h-1 z-[-1] rounded-lg'
+    style={`view-transition-name: ${url}-bg; background-color: ${bg}`}>
+  </svg>
+</a>
