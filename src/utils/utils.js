@@ -1,5 +1,5 @@
 export function updateTheDOMSomehow(data) {
-  document.body.innerHTML = data;
+  document.getElementById('content').innerHTML = data
 }
 
 // TODO: FETCH THE NEXT PAGE FOR IDENTIFY THE NEW VIEW
@@ -8,8 +8,8 @@ export async function fetchNextPage(url) {
   const response = await fetch(url);
   const text = await response.text();
   // OBTAIN THE BODY OF THE NEXT PAGE
-  const data = text.match(/<body[^>]*>([\s\S]*)<\/body>/i)[1];
-  return data;
+  // const data = text.match(/<body[^>]*>([\s\S]*)<\/body>/i)[1];
+  return text;
 }
 
 export function checkIsNavigationSupported() {
